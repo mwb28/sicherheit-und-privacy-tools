@@ -100,4 +100,5 @@ def schluessel_berechnen(verschl_Zahl, e, n):
     print ("="+ str((verschl_Zahl**d)%n))
 
 
-schluessel_berechnen(63,11,65)
+schluessel_berechnen(920,157,2773)
+
