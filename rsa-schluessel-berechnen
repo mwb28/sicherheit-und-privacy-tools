@@ -10,7 +10,7 @@ def ext_euclid(e, f):
         if y3==0:
               return print (x3 + "ist keine Inverse")
         if y3 == 1:
-            return print(str(y3)+ " ist ggT"+ str(y2)+" ist inverse")
+            return print(str(y3)+ " ist ggT, "+ str(y2)+" ist inverse")
         else:
             printlist = []
             q = x3//y3
@@ -94,7 +94,9 @@ def schluessel_berechnen(verschl_Zahl, e, n):
     ext_euclid(e,phi)
     d = ext_euclid_ohneprint(e,phi)
     if d <0:
+        print (str (d) +"mod phi als d berechnen:")
         d = d % phi
+        print("d= " + str(d))
     print ("schlüssel: " +str(e) + ", " + str(d))
     print ("c^d mod n = " +str(verschl_Zahl)+ "^"+str(d)+ "mod"+ str(n))
     print ("="+ str((verschl_Zahl**d)%n))
