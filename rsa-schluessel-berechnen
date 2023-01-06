@@ -84,10 +84,13 @@ def ext_euclid_ohneprint(e, f):
             y3 = t3
 
 def schluessel_berechnen(verschl_Zahl, e, n):
+    print("verschlüsselte Zahl= " + str(verschl_Zahl))
+    print("öffentlicher Schlüssel= " + str(e))
+    print("Produkt der Primfaktoren(p*q)= " + str(n))
     primfaktoren_list = primfaktoren(n)
     print("primfaktoren = "+str(primfaktoren_list))
     phi = (primfaktoren_list[0]-1) * (primfaktoren_list[1]-1)
-    print ("phi=" +str(phi))
+    print ("phi=" +str(phi) + " (p-1)(q-1)")
     print(str(e)+ "*d mod phi(" +str(n)+") = 1")
     print(str(e)+ "*d mod"+ str(phi) +"= 1")
     print("inverse berechnen:")
@@ -97,9 +100,11 @@ def schluessel_berechnen(verschl_Zahl, e, n):
         print (str (d) +"mod phi als d berechnen:")
         d = d % phi
         print("d= " + str(d))
-    print ("schlüssel: " +str(e) + ", " + str(d))
-    print ("c^d mod n = " +str(verschl_Zahl)+ "^"+str(d)+ "mod"+ str(n))
-    print ("="+ str((verschl_Zahl**d)%n))
+    print ("Öffentlicher Schlüssel (e, n): " +str(e) + ", " + str(n))
+    print ("privater Schlüssel(d,n): " +str(d) + ", " + str(n))
+    print ("verschlüsselte_Zahl^d mod n = " +str(verschl_Zahl)+ "^"+str(d)+ "mod"+ str(n))
+
+    print ("Ursprüngliche Zahl entschlüsselt: ="+ str((verschl_Zahl**d)%n))
 
 
 schluessel_berechnen(920,157,2773)
